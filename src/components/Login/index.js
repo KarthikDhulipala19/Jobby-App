@@ -6,8 +6,8 @@ import './index.css'
 
 class Login extends Component {
   state = {
-    username: '',
-    password: '',
+    usernameInput: '',
+    passwordInput: '',
     errorMsg: '',
     showErrorMsg: false,
   }
@@ -24,11 +24,10 @@ class Login extends Component {
 
   onSubmitForm = async event => {
     event.preventDefault()
-    let {username, password} = this.state
-
-    if (username === 'sitarama') username = 'rahul'
-    if (password === 'sitarama@2025') password = 'rahul@2021'
-
+    const {usernameInput, passwordInput} = this.state
+    const username = usernameInput === 'sitarama' ? 'rahul' : 'sitarama'
+    const password =
+      passwordInput === 'sitarama@2025' ? 'rahul@2021' : 'sitarama@2025'
     const userDetails = {username, password}
     const LoginApiUrl = 'https://apis.ccbp.in/login'
     const options = {
@@ -45,12 +44,12 @@ class Login extends Component {
     }
   }
 
-  updateUsername = event => this.setState({username: event.target.value})
+  updateUsername = event => this.setState({usernameInput: event.target.value})
 
-  updatePassword = event => this.setState({password: event.target.value})
+  updatePassword = event => this.setState({passwordInput: event.target.value})
 
   renderUsernameField = () => {
-    const {username} = this.state
+    const {usernameInput} = this.state
     return (
       <div className="input-field-container">
         <label htmlFor="username" className="login-input-label">
@@ -58,7 +57,7 @@ class Login extends Component {
         </label>
         <input
           type="text"
-          value={username}
+          value={usernameInput}
           className="login-input-field"
           placeholder="sitarama"
           id="username"
@@ -70,7 +69,7 @@ class Login extends Component {
   }
 
   renderPasswordField = () => {
-    const {password} = this.state
+    const {passwordInput} = this.state
     return (
       <div className="input-field-container">
         <label htmlFor="password" className="login-input-label">
@@ -78,7 +77,7 @@ class Login extends Component {
         </label>
         <input
           type="password"
-          value={password}
+          value={passwordInput}
           className="login-input-field"
           placeholder="sitarama@2025"
           id="password"

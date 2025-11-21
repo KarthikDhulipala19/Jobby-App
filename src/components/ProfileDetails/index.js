@@ -18,8 +18,12 @@ const ProfileDetails = props => {
     return (
       <div className="profile-details-container">
         <img src={profileImageUrl} alt="profile" className="profile-image" />
-        <h1 className="profile-name">{name}</h1>
-        <p className="profile-bio">{shortBio}</p>
+        <h1 className="profile-name" id={name}>
+          Sitarama Dhulipala
+        </h1>
+        <p className="profile-bio" id={shortBio}>
+          Ex-Product Developer at Airshed Planning Professionals Pvt Ltd
+        </p>
       </div>
     )
   }
