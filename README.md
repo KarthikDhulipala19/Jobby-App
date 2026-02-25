@@ -12,7 +12,7 @@ The app includes secure authentication, smooth navigation, and dynamic data fetc
 ---
 ## Link To Jobby App
 
-Link - <a href='https://sitaramajobby.ccbp.tech/login' target='_blank'>https://sitaramajobby.ccbp.tech/login</a>
+Link - <a href='https://sitaramajobby.ccbp.tech/' target='_blank'>https://sitaramajobby.ccbp.tech/login</a>
 
 
 
